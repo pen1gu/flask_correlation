@@ -1,14 +1,37 @@
-# app.py
-from flask import Flask, render_template
+import logging
+from upbit import Upbit
+from flask import Flask, request, render_template
 
-#Flask 객체 인스턴스 생성
+
 app = Flask(__name__)
+upbit = Upbit()
+upbit.get_hour_candles('KRW-BTC')
 
-@app.route('/') # 접속하는 url
-def index():
-  return render_template('index.html')
 
-if __name__=="__main__":
-  app.run(debug=True)
-  # host 등을 직접 지정하고 싶다면
-  # app.run(host="127.0.0.1", port="5000", debug=True)
+@app.route('/')
+def root():
+    market = request.args.get('market')
+    if market is None or market == '':
+        return 'No market parameter'
+
+    candles = upbit.get_hour_candles(market)
+    if candles is None:
+        return 'invalid market: {}'.format(market)
+
+    label = market
+    xlabels = []
+    dataset = []
+    i = 0
+    for candle in candles:
+        xlabels.append('')
+        dataset.append(candle['trade_price'])
+        i += 1
+    return render_template('chart.html', **locals())
+
+
+def main():
+    app.run(debug = True)
+
+
+if __name__ == '__main__':
+    main()
