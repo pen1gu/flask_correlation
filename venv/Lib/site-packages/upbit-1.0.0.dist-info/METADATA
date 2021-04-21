@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: upbit
+Version: 1.0.0
+Summary: Python wrapper for the Upbit REST API
+Home-page: https://github.com/chaos314/python-upbit
+Author: Seokhwan Cheon
+Author-email: chaos314@gmail.com
+License: MIT
+Keywords: upbit,crypto,bitcoin
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Office/Business :: Financial
+Requires-Dist: requests
+Requires-Dist: pyjwt
+
+UNKNOWN
+
+
