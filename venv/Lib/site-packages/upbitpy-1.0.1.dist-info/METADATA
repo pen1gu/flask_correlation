@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: upbitpy
+Version: 1.0.1
+Summary: upbit open API python wrapper
+Home-page: https://github.com/inasie/upbitpy
+Author: inasie
+Author-email: inasie@naver.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3
+Requires-Dist: requests (==2.21.0)
+Requires-Dist: pyjwt (==1.7.1)
+
+UNKNOWN
+
+
