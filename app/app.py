@@ -26,7 +26,9 @@ def root():
         xlabels.append('')
         dataset.append(candle['trade_price'])
         i += 1
-    return render_template('chart.html', **locals())
+
+    print("도달")
+    return render_template('index.html', **locals())
 
 
 def main():
