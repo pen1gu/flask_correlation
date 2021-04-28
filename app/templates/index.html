@@ -47,91 +47,14 @@
         </div>
     </nav>
 </header>
-<main role="main">
-    <div class="container mt-2">
-        <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link active" id="v-pills-bitcoin-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-bitcoin"
-                        type="button" role="tab" aria-controls="v-pills-bitcoin" aria-selected="true">비트코인
-                </button>
-                <button class="nav-link" id="v-pills-ethereum-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-ethereum"
-                        type="button" role="tab" aria-controls="v-pills-ethereum" aria-selected="false">이더리움
-                </button>
-                <button class="nav-link" id="v-pills-dogecoin-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-dogecoin"
-                        type="button" role="tab" aria-controls="v-pills-dogecoin" aria-selected="false">도지코인
-                </button>
-            </div>
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-bitcoin" role="tabpanel"
-                     aria-labelledby="v-pills-bitcoin-tab">
-                    <div class="container-fluid" style="width:800px; height:400px;">
-                        <canvas id="canvas"></canvas>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-ethereum" role="tabpanel" aria-labelledby="v-pills-ethereum-tab">
-                    <div class="container">
-                        이더리움
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-dogecoin" role="tabpanel" aria-labelledby="v-pills-dogecoin-tab">
-                    <div class="container">
-                        도지코인
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-<script>
-window.onload = function () {
-    new Chart(document.getElementById("canvas"), {
-        type: 'line',
-        data: {
-            labels: {{ xlabels | tojson }},
-            datasets: [{
-                label: '{{ label }}',
-                data: {{ dataset | tojson }},
-                borderColor: "rgba(247, 16, 74, 1)",
-                fill: false,
-                lineTension: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            title: {
-                display: true,
-                text: '{{ label }} 가격 변화'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-            },
-            hover: {
-                mode: 'nearest',
-                intersect: true
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    ticks: {
-                    },
-                    scaleLabel: {
-                        display: true,
-                    }
-                }]
-            }
-        }
-    });
-}
-</script>
+
+<div>
+    <img src="{{ url_for('fig', market = 'KRW-BTC') }}" alt="Image Placeholder"
+         width={{ width }}, height={{ height }}>
+    {#    <br>#}
+    {#    <img src="{{ url_for('fig',market = 'KRW-ETH') }}" alt="Image Placeholder"#}
+    {#         width={{ width }}, height={{ height }}>#}
+</div>
+
 </body>
 </html>
