@@ -49,12 +49,12 @@
 </header>
 
 <div>
-    <img src="{{ url_for('fig', market = 'KRW-BTC') }}" alt="Image Placeholder"
+    <img src="{{ url_for('fig', btc_eth = 'KRW-BTC_KRW-ETH') }}" alt="Image Placeholder"
          width={{ width }}, height={{ height }}>
-    {#    <br>#}
-    {#    <img src="{{ url_for('fig',market = 'KRW-ETH') }}" alt="Image Placeholder"#}
-    {#         width={{ width }}, height={{ height }}>#}
-</div>
 
+    <br>
+
+    비트코인, 이더리움 상관도 분석 결과 : {{ url_for('corr') }}
+</div>
 </body>
 </html>

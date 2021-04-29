@@ -15,8 +15,8 @@ class Upbit:
         return krw_markets
 
 
-    def get_hour_candles(self, market):
+    def get_days_candles(self, market):
         if market not in self.__krw_markets.keys():
             return None
-        candles = self.__upbit.get_minutes_candles(60, market, count=10)
+        candles = self.__upbit.get_days_candles(market, count=10)
         return candles
