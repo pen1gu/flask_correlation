@@ -3,3 +3,11 @@
     height: 300px;
     border: 1px solid red;
 } */
+
+body {
+    width: 800px;
+}
+
+div {
+    align-content: center;
+}
